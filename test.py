@@ -9,8 +9,11 @@ z = np.array([[3,1,1],[1,8,9]],dtype=np.intc)
 A = np.stack([x,y,z],axis=2)
 print(A)
 # A = y
+
+# The numpy array must be contiguous, thus, the flag here
 if not A.flags['C_CONTIGUOUS']:
 	A = np.ascontiguousarray(A, dtype= A.dtype)
+	
 A_ct = ctypes.c_void_p(A.ctypes.data)
 shape = np.array(A.shape,dtype=np.uintc)
 shape_ct = ctypes.c_void_p(shape.ctypes.data)
