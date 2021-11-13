@@ -1,5 +1,5 @@
 // #include "helper.h"
-#include <stdio.h>
+// #include <stdio.h>
 #include "helper.h"
 #include "printC.h"
 
@@ -18,6 +18,8 @@ void printNumpy(void* _arr, void* _shape, unsigned int nd){
 	}
 	else{
 		printArray((int*)_arr,shape,1);
+		A b;
+		b.print();
 	}
 
 }
